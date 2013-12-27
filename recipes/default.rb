@@ -10,9 +10,19 @@ include_recipe "nodejs"
 include_recipe "nodejs::npm"
 include_recipe "git"
 
-bash "clone repository" do
-  user "vagrant"
+
+git "#{Chef::Config[:file_cache_path]}/www.balancedpayments.com.git" do
+  repository "https://github.com/balanced/www.balancedpayments.com.git"
+  reference "master"
+  action :sync
+end
+
+bash "install grunt" do
+  cwd "#{Chef::Config[:file_cache_path]}/www.balancedpayments.com.git"
   code <<-EOH
-    git clone https://github.com/balanced/www.balancedpayments.com.git
+    npm install -g grunt-cli
+    npm install
+    grunt vagrant
   EOH
+  environment 'PREFIX' => "/usr/local"
 end

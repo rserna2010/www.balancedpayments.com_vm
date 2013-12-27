@@ -14,9 +14,10 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
 
   # Assign this VM to a host-only network IP, allowing you to access it
-  config.vm.network :private_network, ip: "33.33.33.10"
+  config.vm.network :private_network, ip: '10.0.0.2'
 
-  config.vm.network :private_network, ip: "33.33.33.10"
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
+
   config.vm.boot_timeout = 120
   config.berkshelf.enabled = true
 
