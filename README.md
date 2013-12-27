@@ -1,13 +1,7 @@
 # www.balancedpayments.com_VM cookbook
 
-# Requirements
-
 # Usage
+After cloning the repo, enter directory and vagrant up
 
-# Attributes
 
-# Recipes
-
-# Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Richard Serna (richie@balancedpayments.com)
