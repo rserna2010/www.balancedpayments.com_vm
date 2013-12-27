@@ -2,7 +2,8 @@
 
 # Usage
 After cloning the repo, enter directory and run
-	vagrant up
+
+    vagrant up
 
 
 Author:: Richard Serna (richie@balancedpayments.com)
